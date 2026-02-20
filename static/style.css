@@ -116,3 +116,10 @@ h1 {
 .back-btn:hover {
     background: #0e8abf;
 }
+body {
+    background-color: #CFDBD5 !important;
+}
+
+.result-container {
+    background-color: #E1E5F2 !important;
+}

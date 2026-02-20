@@ -1,0 +1,5 @@
+model/archive/
+*.pth
+*.p
+*.zip
+*.h5

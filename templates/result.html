@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,3 +34,27 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Detection Result</h1>
+
+        <div class="result-box">
+            <h2>{{ prediction }}</h2>
+            <p><strong>Confidence:</strong> {{ confidence }}%</p>
+            <p><strong>Reason:</strong> {{ reason }}</p>
+        </div>
+
+        <a href="/" class="back-btn">Check Another Image</a>
+    </div>
+
+</body>
+</html>
+>>>>>>> fefee65bf65b0e193acfc10b16a7df81258e339d

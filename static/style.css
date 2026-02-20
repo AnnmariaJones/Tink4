@@ -1,45 +1,59 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
+    background-color: #CFDBD5; /* page background */
+    color: #0f172a; /* text color */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    text-align: center;
 }
 
 .container {
-    text-align: center;
     width: 90%;
-    max-width: 600px;
+    max-width: 650px;
+    background: #E1E5F2; /* container color */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    color: #0f172a;
 }
 
 h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: #0f172a;
 }
 
 .subtitle {
-    color: #94a3b8;
+    color: #374151;
     margin-bottom: 40px;
 }
 
 .upload-card, .result-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
+    background: #f9fafc; /* slightly lighter than container */
+    padding: 30px;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    color: #0f172a;
 }
 
 .file-label {
     display: inline-block;
-    padding: 15px 25px;
-    background: #1e293b;
-    border-radius: 8px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #06b6d4, #2563eb); /* analyze image style */
+    border-radius: 10px;
     cursor: pointer;
     margin-bottom: 20px;
+    transition: 0.3s ease;
+    font-weight: 500;
+    color: white;
+}
+
+.file-label:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
 }
 
 .file-label input {
@@ -47,18 +61,20 @@ h1 {
 }
 
 .analyze-btn {
-    padding: 12px 25px;
+    padding: 14px 28px;
     border: none;
-    border-radius: 8px;
-    background: #06b6d4;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #06b6d4, #2563eb); /* same gradient */
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
+    font-weight: 500;
 }
 
 .analyze-btn:hover {
-    background: #0891b2;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
 }
 
 .result-card h2 {
@@ -82,20 +98,21 @@ h1 {
 .explanation {
     text-align: left;
     margin-bottom: 30px;
-    background: rgba(255,255,255,0.05);
+    background: #f3f4f6; /* slightly lighter */
     padding: 20px;
     border-radius: 10px;
+    color: #0f172a;
 }
 
 .back-btn {
     text-decoration: none;
     padding: 10px 20px;
-    background: #6366f1;
+    background: linear-gradient(135deg, #06b6d4, #2563eb); /* same as Analyze Image */
     border-radius: 8px;
     color: white;
     transition: 0.3s;
 }
 
 .back-btn:hover {
-    background: #4f46e5;
+    background: #0e8abf;
 }

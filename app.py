@@ -23,18 +23,21 @@ if os.path.exists(model_path):
 else:
     print(f"Model file not found at {model_path}. The app will run but predictions will be placeholder.")
 
-# Prediction function (placeholder if model is None)
+# Prediction function
 def predict_image(image_path):
     img = Image.open(image_path).convert("RGB")
     
-    # If model loaded, you can add preprocessing + real prediction here
     if model:
-        # TODO: Add real preprocessing and prediction
-        return "FAKE"  # placeholder until you implement
+        # TODO: Add real preprocessing + inference
+        label = "FAKE"
+        confidence = 0.85  # placeholder
     else:
-        return "FAKE"  # placeholder
+        label = "FAKE"
+        confidence = 0.85  # placeholder
 
-# Routes
+    remark = "High likelihood of manipulation" if label == "FAKE" else "Looks authentic"
+    return label, confidence, remark
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
@@ -48,20 +51,15 @@ def index():
         file.save(filepath)
         print(f"Saved file to {filepath}")
 
-        result = predict_image(filepath)
+        label, confidence, remark = predict_image(filepath)
 
-        # Check if template exists
-        try:
-            return render_template("result.html", result=result)
-        except Exception as e:
-            return f"Error rendering template: {e}"
+        return render_template("result.html", 
+                               result=label, 
+                               confidence=confidence, 
+                               remark=remark)
 
-    try:
-        return render_template("index.html")
-    except Exception as e:
-        return f"Error rendering template: {e}"
+    return render_template("index.html")
 
-# Start app safely
 if __name__ == "__main__":
     print("Starting Flask deepfake detector app...")
     app.run(debug=True)

@@ -1,35 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Analysis Result | DeepShield</title>
+    <title>DeepShield | Result</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .result-container {
+            background: #fff;
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            max-width: 450px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .label {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: {% if result == 'FAKE' %}#e74c3c{% else %}#2ecc71{% endif %};
+        }
+
+        .info {
+            margin: 15px 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .remark {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #fff;
+            background: #3498db;
+            padding: 12px 25px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #2980b9;
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-
-    <h1>🔎 Deepfake Analysis Report</h1>
-
-    <div class="result-card">
-
-        <h2 class="{{ 'fake' if prediction == 'AI-Generated' else 'real' }}">
-            {{ prediction }}
-        </h2>
-
-        <div class="confidence">
-            Confidence Score: <strong>{{ confidence }}%</strong>
-        </div>
-
-        <div class="explanation">
-            <h3>🧠 Model Explanation</h3>
-            <p>{{ explanation }}</p>
-        </div>
-
-        <a href="/" class="back-btn">⬅ Analyze Another Image</a>
-
+    <div class="result-container">
+        <h1>🧠 DeepShield Result</h1>
+        <div class="label">{{ result }}</div>
+        <div class="info">Confidence Score: {{ (confidence*100)|round(2) }}%</div>
+        <div class="remark">{{ remark }}</div>
+        <a href="/">🔄 Analyze Another Image</a>
     </div>
-
-</div>
-
 </body>
 </html>

@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 40px;
+}
+
+.upload-card, .result-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+}
+
+.file-label {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #1e293b;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.file-label input {
+    display: none;
+}
+
+.analyze-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #06b6d4;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.analyze-btn:hover {
+    background: #0891b2;
+}
+
+.result-card h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.real {
+    color: #22c55e;
+}
+
+.fake {
+    color: #ef4444;
+}
+
+.confidence {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.explanation {
+    text-align: left;
+    margin-bottom: 30px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.back-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #6366f1;
+    border-radius: 8px;
+    color: white;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #4f46e5;
+}

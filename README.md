@@ -31,3 +31,8 @@ Frameworks used: Flask,PyTorch
 Libraries used: Torch,Pillow,Numpy
 Tools used:VS Code,pip, python 3.13
 
+### screenshots 
+[home page](home.jpeg)
+[choose image](choose.jpeg)
+[result](result.jpeg)
+
